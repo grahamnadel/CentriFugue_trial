@@ -70,11 +70,15 @@ class AudioPlayer: ObservableObject {
         do {
             audioPlayer = try AVAudioPlayer(contentsOf: audio)
             
-            audioPlayer!.play()
+            play()
             isPlaying = true
         } catch {
             print("Playback failed.")
         }
+    }
+    
+    func play() {
+        audioPlayer!.play()
         trackPlayback()
     }
     

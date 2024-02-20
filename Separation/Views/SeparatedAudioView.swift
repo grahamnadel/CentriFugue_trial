@@ -71,7 +71,7 @@ struct SeparatedAudioView: View {
             playbackProgressView
             if audioPlayer.isPlaying == false {
                 Button(action: {
-//                    self.audioPlayer.startPlayback(audio: self.audioURL)
+                    audioPlayer.play()
                 }) {
                     Image(systemName: "play.circle")
                         .imageScale(.large)
