@@ -10,25 +10,6 @@ class AudioPlayer: ObservableObject {
     @Published var progress = 0.0
     @Published var isPlaying = false
     
-    //Track the audio progress
-//    var currentPosition: Double? {
-//        guard audioPlayer?.duration ?? 0.0 > 0.0 else {
-//            return nil
-//        }
-//        if let audioPlayer = audioPlayer {
-//            let position = audioPlayer.currentTime / audioPlayer.duration
-////            updateProgress(newValue: position)
-//            print("Updating position")
-//            return position
-//        } else {
-//            return nil
-//        }
-//    }
-    
-    func updateProgress(newValue currentPosition: Double) {
-        progress = currentPosition
-    }
-    
     func loadAudio(for audioUrl: URL) {
         print("loading")
         do {
@@ -41,8 +22,6 @@ class AudioPlayer: ObservableObject {
     }
     
     func createAudioFile(from audioData: [[Float]]) -> URL? {
-        print("audio: \(audioData)")
-        
         let sr = 44100.0
         //        Convert from 2 channels to 1
         let flattenedAudioData = audioData.flatMap { $0 }
@@ -96,6 +75,24 @@ class AudioPlayer: ObservableObject {
         } catch {
             print("Playback failed.")
         }
+        trackPlayback()
+    }
+    
+    func trackPlayback() {
+        // Start a timer to update progress periodically
+        let timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { timer in
+            guard let audioPlayer = self.audioPlayer else {
+                return
+            }
+            self.progress = min(audioPlayer.currentTime / audioPlayer.duration, 1.0)
+            
+            // Check if playback has finished
+            if !audioPlayer.isPlaying {
+                timer.invalidate() // Stop the timer when playback finishes
+                self.isPlaying = false
+            }
+        }
+        timer.fire() // Fire the timer immediately to update progress
     }
     
     func stopPlayback() {

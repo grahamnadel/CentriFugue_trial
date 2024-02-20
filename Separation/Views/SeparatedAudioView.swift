@@ -16,7 +16,9 @@ struct SeparatedAudioView: View {
     @FocusState private var isKeyboardActive: Bool
     @State private var newName = ""
     @State private var isEditing = false
+    @State var progress = 0.0
     @State var scrubStartProgress = 0.0
+    var test = 0.5
     
     private var instrumentsInFirstRow: [(String, [[Float]])] {
         return [("🎤", separation.vocals), ("🐟", separation.bass)]
@@ -62,11 +64,27 @@ struct SeparatedAudioView: View {
         //            .padding()
         
         InstrumentRowView(instrumentsinRow: instrumentsInFirstRow, audioPlayer: audioPlayer)
-        
+
         InstrumentRowView(instrumentsinRow: instrumentsInSecondRow, audioPlayer: audioPlayer)
         
-        playbackProgressView
-//        AudioProgressView(audioPlayer: audioPlayer)
+        HStack {
+            playbackProgressView
+            if audioPlayer.isPlaying == false {
+                Button(action: {
+//                    self.audioPlayer.startPlayback(audio: self.audioURL)
+                }) {
+                    Image(systemName: "play.circle")
+                        .imageScale(.large)
+                }
+            } else {
+                Button(action: {
+                    self.audioPlayer.stopPlayback()
+                }) {
+                    Image(systemName: "stop.fill")
+                        .imageScale(.large)
+                }
+            }
+        }
     }
     
     @ViewBuilder
@@ -83,12 +101,19 @@ struct SeparatedAudioView: View {
                             .fill(.clear)
                             .padding(.vertical)
                             .contentShape(Rectangle())
-                            .gesture(DragGesture()
-                                .onChanged{ drag in
-                                    if !audioPlayer.isPlaying {
-                                        scrubStartProgress = audioPlayer.progress
-                                    }
-                                })
+//                            .gesture(DragGesture()
+//                                .onChanged{ drag in
+//                                    if !audioPlayer.isPlaying {
+//                                        scrubStartProgress = audioPlayer.progress
+//                                    }
+//                                    
+//                                    let offset = drag.translation.width / geometry.size.width
+//                                    audioPlayer.progress = max(0, min(scrubStartProgress + offset, 1))
+//                                } .onEnded { _ in
+//                                    //audioPlayer.isScrubbing = false
+//                                    scrubStartProgress = 0
+////                                    }
+//                                })
                     }
                 }
         }
