@@ -1,0 +1,561 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		53B542E62B85250400D42EA2 /* CentriFugue_trialApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B542E52B85250400D42EA2 /* CentriFugue_trialApp.swift */; };
+		53B542EA2B85250600D42EA2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53B542E92B85250600D42EA2 /* Assets.xcassets */; };
+		53B542ED2B85250600D42EA2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53B542EC2B85250600D42EA2 /* Preview Assets.xcassets */; };
+		53B542F52B85262700D42EA2 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B542F42B85262700D42EA2 /* Data.swift */; };
+		53B542F72B85265B00D42EA2 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B542F62B85265B00D42EA2 /* MainView.swift */; };
+		53B542F92B85266E00D42EA2 /* InstrumentRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B542F82B85266E00D42EA2 /* InstrumentRowView.swift */; };
+		53B542FB2B85267B00D42EA2 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B542FA2B85267B00D42EA2 /* CardView.swift */; };
+		53B542FD2B85268800D42EA2 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B542FC2B85268800D42EA2 /* DetailView.swift */; };
+		53B542FF2B85269900D42EA2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B542FE2B85269900D42EA2 /* ContentView.swift */; };
+		53B543012B8526A800D42EA2 /* CallAPIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B543002B8526A800D42EA2 /* CallAPIView.swift */; };
+		53B543032B8526B500D42EA2 /* RecordingList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B543022B8526B500D42EA2 /* RecordingList.swift */; };
+		53B543052B8526C100D42EA2 /* RecordingRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B543042B8526C100D42EA2 /* RecordingRow.swift */; };
+		53B543072B8526CD00D42EA2 /* RecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B543062B8526CD00D42EA2 /* RecordView.swift */; };
+		53B543092B8526DA00D42EA2 /* RecordButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B543082B8526DA00D42EA2 /* RecordButtonView.swift */; };
+		53B5430B2B8526F100D42EA2 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B5430A2B8526F100D42EA2 /* API.swift */; };
+		53B5430D2B8526FF00D42EA2 /* SeparatedAudio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B5430C2B8526FF00D42EA2 /* SeparatedAudio.swift */; };
+		53B5430F2B85270C00D42EA2 /* SeparationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B5430E2B85270C00D42EA2 /* SeparationView.swift */; };
+		53B543112B85271F00D42EA2 /* SeparatedAudioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B543102B85271F00D42EA2 /* SeparatedAudioView.swift */; };
+		53B543132B85272E00D42EA2 /* AudioPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B543122B85272E00D42EA2 /* AudioPlayerView.swift */; };
+		53B543152B85274000D42EA2 /* Recorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B543142B85274000D42EA2 /* Recorder.swift */; };
+		53B543172B85275000D42EA2 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B543162B85275000D42EA2 /* AudioPlayer.swift */; };
+		53B543192B85276700D42EA2 /* TotalRecordingsTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B543182B85276700D42EA2 /* TotalRecordingsTracker.swift */; };
+		53B5431B2B853F4000D42EA2 /* AudioProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B5431A2B853F4000D42EA2 /* AudioProgressView.swift */; };
+		74B925ADB70C24B1D136633A /* Pods_CentriFugue_trial.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A5DC629EFA6DEDF807C3275 /* Pods_CentriFugue_trial.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		2A5DC629EFA6DEDF807C3275 /* Pods_CentriFugue_trial.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CentriFugue_trial.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		53B542E22B85250400D42EA2 /* CentriFugue_trial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CentriFugue_trial.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		53B542E52B85250400D42EA2 /* CentriFugue_trialApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CentriFugue_trialApp.swift; sourceTree = "<group>"; };
+		53B542E92B85250600D42EA2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		53B542EC2B85250600D42EA2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		53B542F32B85260900D42EA2 /* CentriFugue-trial-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "CentriFugue-trial-Info.plist"; sourceTree = SOURCE_ROOT; };
+		53B542F42B85262700D42EA2 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		53B542F62B85265B00D42EA2 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		53B542F82B85266E00D42EA2 /* InstrumentRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstrumentRowView.swift; sourceTree = "<group>"; };
+		53B542FA2B85267B00D42EA2 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		53B542FC2B85268800D42EA2 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		53B542FE2B85269900D42EA2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		53B543002B8526A800D42EA2 /* CallAPIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallAPIView.swift; sourceTree = "<group>"; };
+		53B543022B8526B500D42EA2 /* RecordingList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingList.swift; sourceTree = "<group>"; };
+		53B543042B8526C100D42EA2 /* RecordingRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingRow.swift; sourceTree = "<group>"; };
+		53B543062B8526CD00D42EA2 /* RecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordView.swift; sourceTree = "<group>"; };
+		53B543082B8526DA00D42EA2 /* RecordButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordButtonView.swift; sourceTree = "<group>"; };
+		53B5430A2B8526F100D42EA2 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		53B5430C2B8526FF00D42EA2 /* SeparatedAudio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeparatedAudio.swift; sourceTree = "<group>"; };
+		53B5430E2B85270C00D42EA2 /* SeparationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeparationView.swift; sourceTree = "<group>"; };
+		53B543102B85271F00D42EA2 /* SeparatedAudioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeparatedAudioView.swift; sourceTree = "<group>"; };
+		53B543122B85272E00D42EA2 /* AudioPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerView.swift; sourceTree = "<group>"; };
+		53B543142B85274000D42EA2 /* Recorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recorder.swift; sourceTree = "<group>"; };
+		53B543162B85275000D42EA2 /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
+		53B543182B85276700D42EA2 /* TotalRecordingsTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalRecordingsTracker.swift; sourceTree = "<group>"; };
+		53B5431A2B853F4000D42EA2 /* AudioProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioProgressView.swift; sourceTree = "<group>"; };
+		C5C497848ECC02E3C83A6DE3 /* Pods-CentriFugue_trial.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CentriFugue_trial.release.xcconfig"; path = "Target Support Files/Pods-CentriFugue_trial/Pods-CentriFugue_trial.release.xcconfig"; sourceTree = "<group>"; };
+		D61B1FAC60A5F0F5A96A3E5A /* Pods-CentriFugue_trial.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CentriFugue_trial.debug.xcconfig"; path = "Target Support Files/Pods-CentriFugue_trial/Pods-CentriFugue_trial.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		53B542DF2B85250400D42EA2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				74B925ADB70C24B1D136633A /* Pods_CentriFugue_trial.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		15728ED07C9162FF7C2C171F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2A5DC629EFA6DEDF807C3275 /* Pods_CentriFugue_trial.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		53B542D92B85250400D42EA2 = {
+			isa = PBXGroup;
+			children = (
+				53B542E52B85250400D42EA2 /* CentriFugue_trialApp.swift */,
+				53B542F42B85262700D42EA2 /* Data.swift */,
+				53B542F62B85265B00D42EA2 /* MainView.swift */,
+				53B542FE2B85269900D42EA2 /* ContentView.swift */,
+				53B543212B8542CA00D42EA2 /* Audio */,
+				53B5431E2B85427800D42EA2 /* Recording */,
+				53B5431C2B85426700D42EA2 /* Separation */,
+				53B542E42B85250400D42EA2 /* CentriFugue_trial */,
+				53B542E32B85250400D42EA2 /* Products */,
+				AACCD72DA2EBBFF07981A22E /* Pods */,
+				15728ED07C9162FF7C2C171F /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		53B542E32B85250400D42EA2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				53B542E22B85250400D42EA2 /* CentriFugue_trial.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		53B542E42B85250400D42EA2 /* CentriFugue_trial */ = {
+			isa = PBXGroup;
+			children = (
+				53B542F32B85260900D42EA2 /* CentriFugue-trial-Info.plist */,
+				53B542E92B85250600D42EA2 /* Assets.xcassets */,
+				53B542EB2B85250600D42EA2 /* Preview Content */,
+			);
+			path = CentriFugue_trial;
+			sourceTree = "<group>";
+		};
+		53B542EB2B85250600D42EA2 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				53B542EC2B85250600D42EA2 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		53B5431C2B85426700D42EA2 /* Separation */ = {
+			isa = PBXGroup;
+			children = (
+				53B5430C2B8526FF00D42EA2 /* SeparatedAudio.swift */,
+				53B5431D2B85427200D42EA2 /* API */,
+				53B5431F2B8542C100D42EA2 /* Views */,
+			);
+			path = Separation;
+			sourceTree = "<group>";
+		};
+		53B5431D2B85427200D42EA2 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				53B543002B8526A800D42EA2 /* CallAPIView.swift */,
+				53B5430A2B8526F100D42EA2 /* API.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		53B5431E2B85427800D42EA2 /* Recording */ = {
+			isa = PBXGroup;
+			children = (
+				53B543142B85274000D42EA2 /* Recorder.swift */,
+				53B543182B85276700D42EA2 /* TotalRecordingsTracker.swift */,
+				53B543202B8542C500D42EA2 /* Views */,
+			);
+			path = Recording;
+			sourceTree = "<group>";
+		};
+		53B5431F2B8542C100D42EA2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				53B542FA2B85267B00D42EA2 /* CardView.swift */,
+				53B5430E2B85270C00D42EA2 /* SeparationView.swift */,
+				53B543102B85271F00D42EA2 /* SeparatedAudioView.swift */,
+				53B542FC2B85268800D42EA2 /* DetailView.swift */,
+				53B542F82B85266E00D42EA2 /* InstrumentRowView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		53B543202B8542C500D42EA2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				53B543062B8526CD00D42EA2 /* RecordView.swift */,
+				53B543082B8526DA00D42EA2 /* RecordButtonView.swift */,
+				53B543042B8526C100D42EA2 /* RecordingRow.swift */,
+				53B543022B8526B500D42EA2 /* RecordingList.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		53B543212B8542CA00D42EA2 /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				53B543162B85275000D42EA2 /* AudioPlayer.swift */,
+				53B543222B8544B600D42EA2 /* Views */,
+			);
+			path = Audio;
+			sourceTree = "<group>";
+		};
+		53B543222B8544B600D42EA2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				53B543122B85272E00D42EA2 /* AudioPlayerView.swift */,
+				53B5431A2B853F4000D42EA2 /* AudioProgressView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		AACCD72DA2EBBFF07981A22E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D61B1FAC60A5F0F5A96A3E5A /* Pods-CentriFugue_trial.debug.xcconfig */,
+				C5C497848ECC02E3C83A6DE3 /* Pods-CentriFugue_trial.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		53B542E12B85250400D42EA2 /* CentriFugue_trial */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 53B542F02B85250600D42EA2 /* Build configuration list for PBXNativeTarget "CentriFugue_trial" */;
+			buildPhases = (
+				0DBCEED19E874FC7163EB2D3 /* [CP] Check Pods Manifest.lock */,
+				53B542DE2B85250400D42EA2 /* Sources */,
+				53B542DF2B85250400D42EA2 /* Frameworks */,
+				53B542E02B85250400D42EA2 /* Resources */,
+				2986744903FE970C8443F4FE /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CentriFugue_trial;
+			productName = CentriFugue_trial;
+			productReference = 53B542E22B85250400D42EA2 /* CentriFugue_trial.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		53B542DA2B85250400D42EA2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1520;
+				LastUpgradeCheck = 1520;
+				TargetAttributes = {
+					53B542E12B85250400D42EA2 = {
+						CreatedOnToolsVersion = 15.2;
+					};
+				};
+			};
+			buildConfigurationList = 53B542DD2B85250400D42EA2 /* Build configuration list for PBXProject "CentriFugue_trial" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 53B542D92B85250400D42EA2;
+			productRefGroup = 53B542E32B85250400D42EA2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				53B542E12B85250400D42EA2 /* CentriFugue_trial */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		53B542E02B85250400D42EA2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				53B542ED2B85250600D42EA2 /* Preview Assets.xcassets in Resources */,
+				53B542EA2B85250600D42EA2 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0DBCEED19E874FC7163EB2D3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CentriFugue_trial-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2986744903FE970C8443F4FE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CentriFugue_trial/Pods-CentriFugue_trial-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CentriFugue_trial/Pods-CentriFugue_trial-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CentriFugue_trial/Pods-CentriFugue_trial-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		53B542DE2B85250400D42EA2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				53B542F92B85266E00D42EA2 /* InstrumentRowView.swift in Sources */,
+				53B542F72B85265B00D42EA2 /* MainView.swift in Sources */,
+				53B542FF2B85269900D42EA2 /* ContentView.swift in Sources */,
+				53B5430F2B85270C00D42EA2 /* SeparationView.swift in Sources */,
+				53B543072B8526CD00D42EA2 /* RecordView.swift in Sources */,
+				53B542FD2B85268800D42EA2 /* DetailView.swift in Sources */,
+				53B543052B8526C100D42EA2 /* RecordingRow.swift in Sources */,
+				53B542F52B85262700D42EA2 /* Data.swift in Sources */,
+				53B543012B8526A800D42EA2 /* CallAPIView.swift in Sources */,
+				53B543152B85274000D42EA2 /* Recorder.swift in Sources */,
+				53B543112B85271F00D42EA2 /* SeparatedAudioView.swift in Sources */,
+				53B5431B2B853F4000D42EA2 /* AudioProgressView.swift in Sources */,
+				53B542FB2B85267B00D42EA2 /* CardView.swift in Sources */,
+				53B543172B85275000D42EA2 /* AudioPlayer.swift in Sources */,
+				53B543032B8526B500D42EA2 /* RecordingList.swift in Sources */,
+				53B542E62B85250400D42EA2 /* CentriFugue_trialApp.swift in Sources */,
+				53B543192B85276700D42EA2 /* TotalRecordingsTracker.swift in Sources */,
+				53B543132B85272E00D42EA2 /* AudioPlayerView.swift in Sources */,
+				53B543092B8526DA00D42EA2 /* RecordButtonView.swift in Sources */,
+				53B5430D2B8526FF00D42EA2 /* SeparatedAudio.swift in Sources */,
+				53B5430B2B8526F100D42EA2 /* API.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		53B542EE2B85250600D42EA2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		53B542EF2B85250600D42EA2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		53B542F12B85250600D42EA2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D61B1FAC60A5F0F5A96A3E5A /* Pods-CentriFugue_trial.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"CentriFugue_trial/Preview Content\"";
+				DEVELOPMENT_TEAM = R72MW9XTRD;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "CentriFugue-trial-Info.plist";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Allow Centrifugue to record audio.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Tuner.CentriFugue-trial";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		53B542F22B85250600D42EA2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C5C497848ECC02E3C83A6DE3 /* Pods-CentriFugue_trial.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"CentriFugue_trial/Preview Content\"";
+				DEVELOPMENT_TEAM = R72MW9XTRD;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "CentriFugue-trial-Info.plist";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Allow Centrifugue to record audio.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Tuner.CentriFugue-trial";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		53B542DD2B85250400D42EA2 /* Build configuration list for PBXProject "CentriFugue_trial" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				53B542EE2B85250600D42EA2 /* Debug */,
+				53B542EF2B85250600D42EA2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		53B542F02B85250600D42EA2 /* Build configuration list for PBXNativeTarget "CentriFugue_trial" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				53B542F12B85250600D42EA2 /* Debug */,
+				53B542F22B85250600D42EA2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 53B542DA2B85250400D42EA2 /* Project object */;
+}
