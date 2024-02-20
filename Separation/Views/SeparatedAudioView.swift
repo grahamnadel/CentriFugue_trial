@@ -13,9 +13,10 @@ struct SeparatedAudioView: View {
     @ObservedObject var audioPlayer: AudioPlayer
     private let separation: DataRecordingSeparation
     @Environment(\.modelContext) var modelContext
+    @FocusState private var isKeyboardActive: Bool
     @State private var newName = ""
     @State private var isEditing = false
-    @FocusState private var isKeyboardActive: Bool
+    @State var scrubStartProgress = 0.0
     
     private var instrumentsInFirstRow: [(String, [[Float]])] {
         return [("🎤", separation.vocals), ("🐟", separation.bass)]
@@ -64,7 +65,33 @@ struct SeparatedAudioView: View {
         
         InstrumentRowView(instrumentsinRow: instrumentsInSecondRow, audioPlayer: audioPlayer)
         
-        AudioProgressView(audioPlayer: audioPlayer)
+        playbackProgressView
+//        AudioProgressView(audioPlayer: audioPlayer)
+    }
+    
+    @ViewBuilder
+    var playbackProgressView: some View {
+        VStack {
+            ProgressView(value: audioPlayer.progress)
+                .overlay {
+                    GeometryReader { geometry in
+                        let line = Rectangle()
+                            .fill(.red)
+                            .frame(width: 1, height: 20)
+                        
+                        Rectangle()
+                            .fill(.clear)
+                            .padding(.vertical)
+                            .contentShape(Rectangle())
+                            .gesture(DragGesture()
+                                .onChanged{ drag in
+                                    if !audioPlayer.isPlaying {
+                                        scrubStartProgress = audioPlayer.progress
+                                    }
+                                })
+                    }
+                }
+        }
     }
     
     func updateItem(for item: DataRecordingSeparation, with newName: String) {

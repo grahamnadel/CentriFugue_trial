@@ -7,18 +7,26 @@ class AudioPlayer: ObservableObject {
     let sampleRate = 44100.0
     
     @Published var audioDuration: Double?
+    @Published var progress = 0.0
     @Published var isPlaying = false
     
     //Track the audio progress
-    var currentPosition: Double? {
-        guard audioPlayer?.duration ?? 0.0 > 0.0 else {
-            return nil
-        }
-        if let audioPlayer = audioPlayer {
-            return audioPlayer.currentTime / audioPlayer.duration
-        } else {
-            return nil
-        }
+//    var currentPosition: Double? {
+//        guard audioPlayer?.duration ?? 0.0 > 0.0 else {
+//            return nil
+//        }
+//        if let audioPlayer = audioPlayer {
+//            let position = audioPlayer.currentTime / audioPlayer.duration
+////            updateProgress(newValue: position)
+//            print("Updating position")
+//            return position
+//        } else {
+//            return nil
+//        }
+//    }
+    
+    func updateProgress(newValue currentPosition: Double) {
+        progress = currentPosition
     }
     
     func loadAudio(for audioUrl: URL) {

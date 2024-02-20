@@ -18,13 +18,13 @@ struct AudioProgressView: View {
                     path.move(to: CGPoint(x: 0, y: geometry.size.height / 2))
                     path.addLine(to: CGPoint(x: geometry.size.width, y: geometry.size.height / 2))
                 }
-                .stroke(Color.black, style: StrokeStyle(lineWidth: 2, lineCap: .round, lineJoin: .round))
+                .stroke(Color.red, style: StrokeStyle(lineWidth: 2, lineCap: .round, lineJoin: .round))
                 
                 //Circle to track progress
                 Circle()
                     .frame(width: 20, height: 20)
                     .foregroundColor(.red)
-                    .offset(x: (audioPlayer.currentPosition ?? 0.0) * geometry.size.width - 10, y: geometry.size.height / 2 - 10)
+//                    .offset(x: (audioPlayer.currentPosition ?? 0.0) * geometry.size.width - 10, y: geometry.size.height / 2 - 10)
                     .animation(.easeInOut(duration: 0.5))
             }
             .frame(height: 40)
