@@ -9,6 +9,7 @@ class AudioPlayer: ObservableObject {
     @Published var audioDuration: Double?
     @Published var progress = 0.0
     @Published var isPlaying = false
+    @Published var isAudioFileReady = false
     
     func loadAudio(for audioUrl: URL) {
         print("loading")
@@ -51,6 +52,7 @@ class AudioPlayer: ObservableObject {
             
             let audioFile = try AVAudioFile(forWriting: fileURL as URL, settings: pcmBuffer!.format.settings)
             try audioFile.write(from: pcmBuffer!)
+            isAudioFileReady = true
             return fileURL as URL
         } catch {
             print("Error writing audio file: \(error)")
