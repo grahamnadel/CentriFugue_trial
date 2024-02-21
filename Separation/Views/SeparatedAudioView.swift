@@ -20,12 +20,8 @@ struct SeparatedAudioView: View {
     @State var scrubStartProgress = 0.0
     var test = 0.5
     
-    private var instrumentsInFirstRow: [(String, [[Float]])] {
-        return [("🎤", separation.vocals), ("🐟", separation.bass)]
-    }
-    
-    private var instrumentsInSecondRow: [(String, [[Float]])] {
-        return [("🎸", separation.guitar), ("🥁", separation.drums)]
+    private var instrumentsInRow: [(String, [[Float]])] {
+        return [("🎤", separation.vocals), ("🐟", separation.bass), ("🎸", separation.guitar), ("🥁", separation.drums)]
     }
     
     init(_ separation: DataRecordingSeparation, _ audioPlayer: AudioPlayer) {
@@ -63,26 +59,31 @@ struct SeparatedAudioView: View {
         //            .multilineTextAlignment(.center)
         //            .padding()
         
-        InstrumentRowView(instrumentsinRow: instrumentsInFirstRow, audioPlayer: audioPlayer)
-
-        InstrumentRowView(instrumentsinRow: instrumentsInSecondRow, audioPlayer: audioPlayer)
+        InstrumentRowView(instrumentsinRow: instrumentsInRow, audioPlayer: audioPlayer)
         
-        HStack {
-            playbackProgressView
+        playbackProgressView
+        Group {
             if audioPlayer.isPlaying == false {
                 Button(action: {
-                    audioPlayer.play()
+                        audioPlayer.play(atTime: nil)
                 }) {
                     Image(systemName: "play.circle")
-                        .imageScale(.large)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 50, height: 50)
+                        .foregroundColor(.white)
                 }
             } else {
                 Button(action: {
                     self.audioPlayer.stopPlayback()
                 }) {
                     Image(systemName: "stop.fill")
-                        .imageScale(.large)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 50, height: 50)
+                        .foregroundColor(.white)
                 }
+                .frame(width: 100, height: 100)
             }
         }
     }
@@ -93,27 +94,25 @@ struct SeparatedAudioView: View {
             ProgressView(value: audioPlayer.progress)
                 .overlay {
                     GeometryReader { geometry in
-                        let line = Rectangle()
-                            .fill(.red)
-                            .frame(width: 1, height: 20)
+//                        let line = Rectangle()
+//                            .fill(.red)
+//                            .frame(width: 1, height: 20)
                         
                         Rectangle()
                             .fill(.clear)
                             .padding(.vertical)
                             .contentShape(Rectangle())
-//                            .gesture(DragGesture()
-//                                .onChanged{ drag in
-//                                    if !audioPlayer.isPlaying {
-//                                        scrubStartProgress = audioPlayer.progress
-//                                    }
-//                                    
-//                                    let offset = drag.translation.width / geometry.size.width
-//                                    audioPlayer.progress = max(0, min(scrubStartProgress + offset, 1))
-//                                } .onEnded { _ in
-//                                    //audioPlayer.isScrubbing = false
-//                                    scrubStartProgress = 0
-////                                    }
-//                                })
+                            .gesture(DragGesture()
+                                .onChanged{ drag in
+                                    if !audioPlayer.isPlaying {
+                                        scrubStartProgress = audioPlayer.progress
+                                    }
+                                    
+                                    let offset = drag.translation.width / geometry.size.width
+                                    audioPlayer.progress = max(0, min(scrubStartProgress + offset, 1))
+                                } .onEnded { _ in
+                                    
+                                })
                     }
                 }
         }
