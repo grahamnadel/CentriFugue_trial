@@ -16,8 +16,6 @@ struct SeparationView: View {
     @Query var separations: [DataRecordingSeparation]
     @Environment(\.modelContext) var modelContext
     
-    @State private var audioURLs: [URL]? = nil
-    
     var body: some View {
         NavigationView {
             VStack {
