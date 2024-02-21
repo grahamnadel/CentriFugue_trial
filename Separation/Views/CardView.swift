@@ -32,8 +32,9 @@ private extension CardView {
             }
                 .frame(width: size.width * Constants.Background.sizeScaleFactor, height: size.height * Constants.Background.heightScaleFactor)
             Text(instrument)
-                .scaledToFill()
-                .minimumScaleFactor(0.5)
+//                .scaledToFill()
+//                .aspectRatio(0.75, contentMode: .fit)
+//                .minimumScaleFactor(0.5)
                 .font(.system(size: size.width * Constants.Font.textWidthFactor))
         }
     }
