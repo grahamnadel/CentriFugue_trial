@@ -19,7 +19,7 @@ struct RecordingsList: View {
                 ForEach(audioRecorder.recordings, id: \.createdAt) { recording in
                     if let fileName = audioPlayer.getFileTitle(filePath: recording.fileURL) {
                     NavigationLink(
-                        destination: DetailView(api: api, recording: recording, fileName: fileName),
+                        destination: DetailView(api, recording: recording, fileName: fileName),
                         label: {
                             Text(fileName)
                             }
