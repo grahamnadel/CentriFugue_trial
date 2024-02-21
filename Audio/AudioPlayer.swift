@@ -24,8 +24,10 @@ class AudioPlayer: ObservableObject {
     
     func createAudioFile(from audioData: [[Float]]) -> URL? {
         let sr = 44100.0
+        print("audioData length: \(audioData.count)")
+        
         //        Convert from 2 channels to 1
-        let flattenedAudioData = audioData.flatMap { $0 }
+        let flattenedAudioData = audioData[0]
         
         //        Create AVAudioFormat
         let audioFormat = AVAudioFormat(commonFormat: .pcmFormatFloat32, sampleRate: sr, channels: 1, interleaved: false)
