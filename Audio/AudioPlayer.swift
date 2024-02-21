@@ -70,15 +70,19 @@ class AudioPlayer: ObservableObject {
         do {
             audioPlayer = try AVAudioPlayer(contentsOf: audio)
             
-            play()
+            play(atTime: nil)
             isPlaying = true
         } catch {
             print("Playback failed.")
         }
     }
     
-    func play() {
-        audioPlayer!.play()
+    func play(atTime time: Double?) {
+        if let time = time{
+            audioPlayer?.play(atTime: time)
+        } else {
+            audioPlayer?.play()
+        }
         trackPlayback()
     }
     
