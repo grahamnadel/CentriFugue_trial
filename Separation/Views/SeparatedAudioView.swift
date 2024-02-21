@@ -31,19 +31,9 @@ struct SeparatedAudioView: View {
     
     var body: some View {
         VStack {
-            //            Group {
-            //Allow for the user to change the name of the file
-            //                if !isEditing {
-            //                    Text(separation.name)
-            //                        .onTapGesture {
-            //                            isEditing = true
-            ////                            isKeyboardActive = true
-            //                        }
-            //                } else {
             TextField(separation.name, text: $newName)
                 .focused($isKeyboardActive)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
-            //                }
         }
                 .toolbar {
                     ToolbarItem(placement: .keyboard) {
@@ -54,14 +44,11 @@ struct SeparatedAudioView: View {
                         }
                     }
                 }
-        //            .font(.title)
-        //            .foregroundColor(.white)
-        //            .multilineTextAlignment(.center)
-        //            .padding()
         
         InstrumentRowView(instrumentsinRow: instrumentsInRow, audioPlayer: audioPlayer)
         
         playbackProgressView
+        
         Group {
             if audioPlayer.isPlaying == false {
                 Button(action: {
@@ -86,6 +73,7 @@ struct SeparatedAudioView: View {
                 .frame(width: 100, height: 100)
             }
         }
+        .opacity(audioPlayer.isAudioFileReady ? 1 : 0)
     }
     
     @ViewBuilder
