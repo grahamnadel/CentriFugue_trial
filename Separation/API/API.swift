@@ -22,7 +22,7 @@ class API: ObservableObject {
 //        FrenchPress 192.168.208.183
 //        Hotspot 10.21.8.101
         isSeparating = true
-        let apiURL = "http://192.168.0.24:5001"
+        let apiURL = "http://172.20.10.5:5001"
         
         let request = AF.upload(multipartFormData: { multipartFormData in
             multipartFormData.append(audioURL, withName: "audio_file")
@@ -45,9 +45,5 @@ class API: ObservableObject {
                 completionHandler(false)
             }
         }
-    }
-    
-    func createAudioFile(from audioData: SeparatedAudio) -> DataRecordingSeparation {
-        return DataRecordingSeparation(name: "Test", category: "Test", drums: audioData.drums, guitar: audioData.other, bass: audioData.bass, vocals: audioData.vocals)
     }
 }
