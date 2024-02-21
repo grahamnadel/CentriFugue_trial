@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5350CEEF2B868D8700C79E3E /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5350CEEE2B868D8700C79E3E /* Network.swift */; };
 		53B542E62B85250400D42EA2 /* CentriFugue_trialApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B542E52B85250400D42EA2 /* CentriFugue_trialApp.swift */; };
 		53B542EA2B85250600D42EA2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53B542E92B85250600D42EA2 /* Assets.xcassets */; };
 		53B542ED2B85250600D42EA2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53B542EC2B85250600D42EA2 /* Preview Assets.xcassets */; };
@@ -35,6 +36,7 @@
 
 /* Begin PBXFileReference section */
 		2A5DC629EFA6DEDF807C3275 /* Pods_CentriFugue_trial.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CentriFugue_trial.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5350CEEE2B868D8700C79E3E /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Network.swift; path = Pods/Network.swift; sourceTree = "<group>"; };
 		53B542E22B85250400D42EA2 /* CentriFugue_trial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CentriFugue_trial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		53B542E52B85250400D42EA2 /* CentriFugue_trialApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CentriFugue_trialApp.swift; sourceTree = "<group>"; };
 		53B542E92B85250600D42EA2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 				53B542E52B85250400D42EA2 /* CentriFugue_trialApp.swift */,
 				53B542F42B85262700D42EA2 /* Data.swift */,
 				53B542F62B85265B00D42EA2 /* MainView.swift */,
+				5350CEEE2B868D8700C79E3E /* Network.swift */,
 				53B542FE2B85269900D42EA2 /* ContentView.swift */,
 				53B543212B8542CA00D42EA2 /* Audio */,
 				53B5431E2B85427800D42EA2 /* Recording */,
@@ -336,6 +339,7 @@
 				53B543172B85275000D42EA2 /* AudioPlayer.swift in Sources */,
 				53B543032B8526B500D42EA2 /* RecordingList.swift in Sources */,
 				53B542E62B85250400D42EA2 /* CentriFugue_trialApp.swift in Sources */,
+				5350CEEF2B868D8700C79E3E /* Network.swift in Sources */,
 				53B543192B85276700D42EA2 /* TotalRecordingsTracker.swift in Sources */,
 				53B543132B85272E00D42EA2 /* AudioPlayerView.swift in Sources */,
 				53B543092B8526DA00D42EA2 /* RecordButtonView.swift in Sources */,
@@ -485,7 +489,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -519,7 +523,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
