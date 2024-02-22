@@ -7,6 +7,16 @@
 
 import Foundation
 import SwiftUI
+import SwiftData
+
+@ModelActor
+actor CachedDataHandler {
+    func persist(item: DataRecordingSeparation) {
+//        items.forEach { modelContext.insert($0) }
+        modelContext.insert(item)
+        try? modelContext.save()
+    }
+}
 
 struct CallApiView: View {
     @Environment(\.modelContext) private var modelContext
@@ -20,14 +30,17 @@ struct CallApiView: View {
                 .foregroundColor(.white)
                 .frame(width: 200, height: 150)
             Button {
+                //TODO: Encapsulate
                 api.callAPI(for: recording.fileURL) { success in
                     if success {
-                        print("Success")
                         if let separatedAudio = api.separatedAudio {
                             //save to swift Data
                             let data = DataRecordingSeparation(name: fileName, category: "Default", drums: separatedAudio.drums, guitar: separatedAudio.other, bass: separatedAudio.bass, vocals: separatedAudio.vocals)
-                            print("Saving")
-                            modelContext.insert(data)
+                            Task {
+                                let cache = CachedDataHandler(modelContainer: modelContext.container)
+                                await cache.persist(item: data)
+//                                modelContext.insert(data)
+                            }
                         } else {
                             print("Failed to add separations to swift data")
                         }
