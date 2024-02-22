@@ -12,9 +12,17 @@ import SwiftData
 @ModelActor
 actor CachedDataHandler {
     func persist(item: DataRecordingSeparation) {
-//        items.forEach { modelContext.insert($0) }
         modelContext.insert(item)
         try? modelContext.save()
+    }
+    
+    func loadAllData() throws -> [DataRecordingSeparation] {
+        let predicate = #Predicate<DataRecordingSeparation> { data in 1==1 }
+        let sort = SortDescriptor<DataRecordingSeparation>(\DataRecordingSeparation.name)
+        let descriptor = FetchDescriptor(predicate: predicate, sortBy: [sort])
+        
+        let result = try modelContext.fetch(descriptor)
+        return result
     }
 }
 
@@ -36,7 +44,7 @@ struct CallApiView: View {
                         if let separatedAudio = api.separatedAudio {
                             //save to swift Data
                             let data = DataRecordingSeparation(name: fileName, category: "Default", drums: separatedAudio.drums, guitar: separatedAudio.other, bass: separatedAudio.bass, vocals: separatedAudio.vocals)
-                            Task {
+                            Task(priority: .background) {
                                 let cache = CachedDataHandler(modelContainer: modelContext.container)
                                 await cache.persist(item: data)
 //                                modelContext.insert(data)
