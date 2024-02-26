@@ -9,6 +9,7 @@ import Foundation
 import SwiftUI
 import SwiftData
 
+//TODO: Add scrollView
 struct SeparationView: View {
     @ObservedObject var api: API
     @ObservedObject var audioPlayer: AudioPlayer
@@ -16,6 +17,7 @@ struct SeparationView: View {
 //    @Query var separations: [DataRecordingSeparation]
     @Environment(\.modelContext) var modelContext
     @State private var separations: [DataRecordingSeparation]?
+    @State private var separationsHaveBeenCreated = true
     
     var body: some View {
         NavigationView {
@@ -29,6 +31,12 @@ struct SeparationView: View {
                                 }
                             }
                     }
+                } else {
+                    if separationsHaveBeenCreated {
+                        ProgressView()
+                    } else {
+                        Text("You have no saved separations")
+                    }
                 }
             }
         }
@@ -37,9 +45,12 @@ struct SeparationView: View {
                 let cache = CachedDataHandler(modelContainer: modelContext.container)
                 do {
                     let data = try await cache.loadAllData()
+                    separationsHaveBeenCreated = true
                     separations = data
+                    
                 } catch {
                     print("Could not load data")
+                    separationsHaveBeenCreated = false
                 }
             }
         }

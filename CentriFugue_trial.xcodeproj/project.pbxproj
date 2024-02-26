@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5350CEEF2B868D8700C79E3E /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5350CEEE2B868D8700C79E3E /* Network.swift */; };
+		53719B832B87B6CD00E91326 /* Performance Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53719B822B87B6CD00E91326 /* Performance Tests.swift */; };
+		53719B852B87C94C00E91326 /* CachedDataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53719B842B87C94C00E91326 /* CachedDataHandler.swift */; };
 		53B542E62B85250400D42EA2 /* CentriFugue_trialApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B542E52B85250400D42EA2 /* CentriFugue_trialApp.swift */; };
 		53B542EA2B85250600D42EA2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53B542E92B85250600D42EA2 /* Assets.xcassets */; };
 		53B542ED2B85250600D42EA2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53B542EC2B85250600D42EA2 /* Preview Assets.xcassets */; };
@@ -36,7 +37,8 @@
 
 /* Begin PBXFileReference section */
 		2A5DC629EFA6DEDF807C3275 /* Pods_CentriFugue_trial.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CentriFugue_trial.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5350CEEE2B868D8700C79E3E /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Network.swift; path = Pods/Network.swift; sourceTree = "<group>"; };
+		53719B822B87B6CD00E91326 /* Performance Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Performance Tests.swift"; sourceTree = "<group>"; };
+		53719B842B87C94C00E91326 /* CachedDataHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachedDataHandler.swift; sourceTree = "<group>"; };
 		53B542E22B85250400D42EA2 /* CentriFugue_trial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CentriFugue_trial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		53B542E52B85250400D42EA2 /* CentriFugue_trialApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CentriFugue_trialApp.swift; sourceTree = "<group>"; };
 		53B542E92B85250600D42EA2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -90,13 +92,12 @@
 			isa = PBXGroup;
 			children = (
 				53B542E52B85250400D42EA2 /* CentriFugue_trialApp.swift */,
-				53B542F42B85262700D42EA2 /* Data.swift */,
 				53B542F62B85265B00D42EA2 /* MainView.swift */,
-				5350CEEE2B868D8700C79E3E /* Network.swift */,
 				53B542FE2B85269900D42EA2 /* ContentView.swift */,
 				53B543212B8542CA00D42EA2 /* Audio */,
 				53B5431E2B85427800D42EA2 /* Recording */,
 				53B5431C2B85426700D42EA2 /* Separation */,
+				53C707D52B8D3AD400BF99D7 /* TBD */,
 				53B542E42B85250400D42EA2 /* CentriFugue_trial */,
 				53B542E32B85250400D42EA2 /* Products */,
 				AACCD72DA2EBBFF07981A22E /* Pods */,
@@ -198,6 +199,16 @@
 				53B5431A2B853F4000D42EA2 /* AudioProgressView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		53C707D52B8D3AD400BF99D7 /* TBD */ = {
+			isa = PBXGroup;
+			children = (
+				53B542F42B85262700D42EA2 /* Data.swift */,
+				53719B822B87B6CD00E91326 /* Performance Tests.swift */,
+				53719B842B87C94C00E91326 /* CachedDataHandler.swift */,
+			);
+			path = TBD;
 			sourceTree = "<group>";
 		};
 		AACCD72DA2EBBFF07981A22E /* Pods */ = {
@@ -325,8 +336,10 @@
 			files = (
 				53B542F92B85266E00D42EA2 /* InstrumentRowView.swift in Sources */,
 				53B542F72B85265B00D42EA2 /* MainView.swift in Sources */,
+				53719B852B87C94C00E91326 /* CachedDataHandler.swift in Sources */,
 				53B542FF2B85269900D42EA2 /* ContentView.swift in Sources */,
 				53B5430F2B85270C00D42EA2 /* SeparationView.swift in Sources */,
+				53719B832B87B6CD00E91326 /* Performance Tests.swift in Sources */,
 				53B543072B8526CD00D42EA2 /* RecordView.swift in Sources */,
 				53B542FD2B85268800D42EA2 /* DetailView.swift in Sources */,
 				53B543052B8526C100D42EA2 /* RecordingRow.swift in Sources */,
@@ -339,7 +352,6 @@
 				53B543172B85275000D42EA2 /* AudioPlayer.swift in Sources */,
 				53B543032B8526B500D42EA2 /* RecordingList.swift in Sources */,
 				53B542E62B85250400D42EA2 /* CentriFugue_trialApp.swift in Sources */,
-				5350CEEF2B868D8700C79E3E /* Network.swift in Sources */,
 				53B543192B85276700D42EA2 /* TotalRecordingsTracker.swift in Sources */,
 				53B543132B85272E00D42EA2 /* AudioPlayerView.swift in Sources */,
 				53B543092B8526DA00D42EA2 /* RecordButtonView.swift in Sources */,

@@ -9,18 +9,21 @@ import Foundation
 import SwiftUI
 
 struct InstrumentRowView: View {
-    let instrumentsinRow: [(String, [[Float]])]
+//    let instrumentsinRow: [(String, [[Float]])]
     @ObservedObject var audioPlayer: AudioPlayer
+    var didSelectInstrument: ((String) -> Void)?
+    var instrumentsInRow = ["🎤", "🐟", "🎸", "🥁"]
     
     var body: some View {
         HStack {
-            ForEach(instrumentsinRow, id: \.0) { instrument, audio in
+            ForEach(instrumentsInRow, id: \.self) { instrument in
                 CardView(instrument: instrument)
                     .disabled(audioPlayer.isPlaying)
                     .onTapGesture {
-                        if let audioURL = audioPlayer.createAudioFile(from: audio) {
-                            audioPlayer.startPlayback(audio: audioURL)
-                        }
+//                        if let audioURL = audioPlayer.createAudioFile(from: audio) {
+//                            audioPlayer.startPlayback(audio: audioURL)
+//                        }
+                        didSelectInstrument?(instrument)
                     }
             }
         }

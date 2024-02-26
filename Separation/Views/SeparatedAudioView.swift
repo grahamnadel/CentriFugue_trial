@@ -13,15 +13,21 @@ struct SeparatedAudioView: View {
     @ObservedObject var audioPlayer: AudioPlayer
     private let separation: DataRecordingSeparation
     @Environment(\.modelContext) var modelContext
+//    TODO: Could I combine keyboard active and isediting?
     @FocusState private var isKeyboardActive: Bool
-    @State private var newName = ""
     @State private var isEditing = false
+    @State private var newName = ""
     @State var progress = 0.0
-    @State var scrubStartProgress = 0.0
-    var test = 0.5
+    @State var playerProgress = 0.0
     
-    private var instrumentsInRow: [(String, [[Float]])] {
-        return [("🎤", separation.vocals), ("🐟", separation.bass), ("🎸", separation.guitar), ("🥁", separation.drums)]
+    var instrumentsInRow: [String: [[Float]]] {
+        let instruments = [
+            "🎤": separation.vocals,
+            "🐟": separation.bass,
+            "🎸": separation.guitar,
+            "🥁": separation.drums
+        ]
+        return instruments
     }
     
     init(_ separation: DataRecordingSeparation, _ audioPlayer: AudioPlayer) {
@@ -31,6 +37,18 @@ struct SeparatedAudioView: View {
     
     var body: some View {
         VStack {
+            Button("Test") {
+                if let audioPlayer = audioPlayer.audioPlayer {
+                    if audioPlayer.isPlaying {
+                        print("play")
+                    } else {
+                        print("no play hombre")
+                    }
+                } else {
+                    print("NO audio")
+                }
+            }
+            
             TextField(separation.name, text: $newName)
                 .focused($isKeyboardActive)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
@@ -45,7 +63,14 @@ struct SeparatedAudioView: View {
                     }
                 }
         
-        InstrumentRowView(instrumentsinRow: instrumentsInRow, audioPlayer: audioPlayer)
+        //TODO: Issues with reDrawing all of the views!! change updates to willSet
+//    instrumentsinRow: instrumentsInRow,
+        InstrumentRowView( audioPlayer: audioPlayer) { selectedInstrument in
+            //TODO: Convert this to an enum
+            if let audioURL = audioPlayer.createAudioFile(from: instrumentsInRow[selectedInstrument] ?? separation.bass) {
+                audioPlayer.startPlayback(audio: audioURL)
+            }
+        }
         
         playbackProgressView
         
@@ -82,25 +107,22 @@ struct SeparatedAudioView: View {
             ProgressView(value: audioPlayer.progress)
                 .overlay {
                     GeometryReader { geometry in
-//                        let line = Rectangle()
-//                            .fill(.red)
-//                            .frame(width: 1, height: 20)
                         
                         Rectangle()
                             .fill(.clear)
                             .padding(.vertical)
                             .contentShape(Rectangle())
-                            .gesture(DragGesture()
-                                .onChanged{ drag in
-                                    if !audioPlayer.isPlaying {
-                                        scrubStartProgress = audioPlayer.progress
-                                    }
-                                    
-                                    let offset = drag.translation.width / geometry.size.width
-                                    audioPlayer.progress = max(0, min(scrubStartProgress + offset, 1))
-                                } .onEnded { _ in
-                                    
-                                })
+//                            .gesture(DragGesture()
+//                                .onChanged{ drag in
+//                                    if !audioPlayer.isPlaying {
+//                                        playerProgress = audioPlayer.progress
+//                                    }
+//                                    
+//                                    let offset = drag.translation.width / geometry.size.width
+//                                    audioPlayer.progress = max(0, min(playerProgress + offset, 1))
+//                                } .onEnded { _ in
+//                                    
+//                                })
                     }
                 }
         }
