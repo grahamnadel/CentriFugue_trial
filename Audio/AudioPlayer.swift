@@ -6,10 +6,31 @@ class AudioPlayer: ObservableObject {
     var audioPlayer: AVAudioPlayer?
     let sampleRate = 44100.0
     
+    @Published var boolTest = false
+    func test() {
+        boolTest.toggle()
+    }
+    
     @Published var audioDuration: Double?
     @Published var progress = 0.0
     @Published var isPlaying = false
     @Published var isAudioFileReady = false
+    var separation: DataRecordingSeparation?
+    
+//    var currentPlayPauseState: PlayPauseState {
+//        switch audioPlayer?.isPlaying {
+//        case .true:
+//            audioPlayer?.pause()
+//        }
+//    }
+    
+    func instrumentsInRow() -> [String: [[Float]]]? {
+        if let separation = separation {
+            return ["🎤": separation.vocals, "🐟": separation.bass, "🎸": separation.guitar, "🥁": separation.drums]
+        } else {
+            return nil
+        }
+    }
     
     func loadAudio(for audioUrl: URL) {
         print("loading")
@@ -23,11 +44,11 @@ class AudioPlayer: ObservableObject {
     }
     
     func createAudioFile(from audioData: [[Float]]) -> URL? {
+        print("called createAudioFile")
         let sr = 44100.0
-        print("audioData length: \(audioData.count)")
         
         //        Convert from 2 channels to 1
-        let flattenedAudioData = audioData[0]
+        let flattenedAudioData = audioData[1]
         
         //        Create AVAudioFormat
         let audioFormat = AVAudioFormat(commonFormat: .pcmFormatFloat32, sampleRate: sr, channels: 1, interleaved: false)
@@ -63,6 +84,7 @@ class AudioPlayer: ObservableObject {
     }
     
     func startPlayback(audio: URL) {
+        print("called startPlayback")
         let playbackSession = AVAudioSession.sharedInstance()
         
         do {
@@ -82,6 +104,8 @@ class AudioPlayer: ObservableObject {
     }
     
     func play(atTime time: Double?) {
+        print("called play")
+        isPlaying = true
         if let time = time{
             audioPlayer?.play(atTime: time)
         } else {
@@ -91,6 +115,7 @@ class AudioPlayer: ObservableObject {
     }
     
     func trackPlayback() {
+        print("called trackPlayback")
         // Start a timer to update progress periodically
         let timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { timer in
             guard let audioPlayer = self.audioPlayer else {
@@ -100,25 +125,29 @@ class AudioPlayer: ObservableObject {
             
             // Check if playback has finished
             if !audioPlayer.isPlaying {
-                timer.invalidate() // Stop the timer when playback finishes
                 self.isPlaying = false
+                timer.invalidate() // Stop the timer when playback finishes
             }
         }
         timer.fire() // Fire the timer immediately to update progress
     }
     
     func stopPlayback() {
-        audioPlayer!.stop()
+        print("called stopPlayback")
         isPlaying = false
+        audioPlayer!.stop()
     }
     
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
+        print("called audioPlayerDidFinishPlaying")
         if flag {
             isPlaying = false
         }
     }
     
     func floatToAVAudioPCMBuffer(_ twoChannelAudio: [[Float]]) -> AVAudioPCMBuffer? {
+        print("called floatToAVAudioPCMBuffer")
+        //TODO: Check if this flattening is still needed. If so, just instance into the 0 dimension of the 2D array
         let oneChannelAudio = twoChannelAudio.flatMap { $0 }
         
         guard let audioFormat = AVAudioFormat(commonFormat: .pcmFormatFloat32, sampleRate: sampleRate, channels: 1, interleaved: false) else {
@@ -144,6 +173,7 @@ class AudioPlayer: ObservableObject {
     }
     
     func floatsToData(_ twoChannelFloats: [[Float]]) -> Data {
+        print("called floatsToData")
         let oneChannelFloats = twoChannelFloats.flatMap { $0 }
         var byteArray = [UInt8]()
         for floatValue in oneChannelFloats {
@@ -155,6 +185,7 @@ class AudioPlayer: ObservableObject {
     }
     
     func playAudioData(for audioData: Data) {
+        print("called playAudioData")
         let playbackSession = AVAudioSession.sharedInstance()
         do {
             try playbackSession.overrideOutputAudioPort(AVAudioSession.PortOverride.speaker)
@@ -185,6 +216,20 @@ class AudioPlayer: ObservableObject {
             return nil
         }
     }
+    
+//    func playPauseButtonTapped() {
+//        switch currentPlayPauseState {
+//        case .play:
+//            audioPlayer?.pause()
+//        case .pause:
+//            Task {
+//                audioPlayer?.play()
+//                let progress = self.progress
+//                
+//            }
+//        }
+//        
+//    }
 }
 
 
@@ -192,3 +237,17 @@ fileprivate enum SampleRate {
     case recording
     case separation
 }
+
+//enum PlayPauseState {
+//    case play
+//    case pause
+//    
+//    var systemImage: String {
+//        switch self {
+//        case .play:
+//            return "pause.fill"
+//        case .pause:
+//            return "play.fill"
+//        }
+//    }
+//}
